@@ -3,6 +3,15 @@
   <h1>Prompt Manager</h1>
 </div>
 
+<p align="center">
+  <a href="https://raw.githubusercontent.com/teressalodas/Prompt-Manager/main/Prompt-Manager.user.js">
+    <img src="https://img.shields.io/badge/GitHub-%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC-red?style=for-the-badge&logo=github" alt="安装脚本" />
+  </a>
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge" alt="License: Apache License 2.0" />
+  </a>
+</p>
+
 <p align="center">简体中文 | <a href="./README.en.md">English</a></p>
 
 Prompt Manager 是一款免费开源的用户脚本，为 AI 聊天页面增加通用提示词管理器。支持多个主流 AI 平台，支持动态提示词、AI 优化提示词、外部提示词订阅更新、Gist 导入导出、备份恢复。
@@ -32,21 +41,14 @@ Prompt Manager 是一款免费开源的用户脚本，为 AI 聊天页面增加�
 
 ## 功能
 
-- **提示词库**：新建、编辑、复制、删除、置顶、拖拽排序，支持搜索、悬停预览，以及普通列表和展开列表（1–3 列）。
-- **标签与排序**：彩色标签、标签筛选、自定义标题颜色；可按名称、最新/最早、最常用/最少用、标签分组排序。
-- **动态提示词**：变量、选项列表、文件槽位、日期时间宏（语法见下文）。
-- **行内调用**：在聊天输入框中输入 `#` 加关键词，即可搜索并插入提示词。
-- **自动发送**：可选择插入后立即发送。
-- **自动附加文件**：可为提示词绑定已保存的全局文件，或通过 `#file` 槽位在每次使用时上传。粘贴按钮也可读取剪贴板中的文本和图片。
-- **AI 优化提示词**：使用你自己的 OpenAI 兼容接口改写提示词，应用前可在左右对比视图中查看差异。
-  - 支持多套 API 配置（名称、Base URL、API Key、模型、系统提示词）。
-  - 每套配置可填多个 API Key（逗号或空格分隔），自动轮换使用。
-  - 可用 `标题 (备注) {{ 提示词 }}` 定义多个系统提示词，每次使用时选择其一。
-- **外部提示词**：将提示词关联到 JSON 元数据 URL（Gist / GitHub / GitLab / jsDelivr），支持版本号、更新日志和定时检查更新。
-- **Gist 集成**：直接在 gist.github.com 上导入或导出提示词（`.mp.prompt.json` / `.txt` / `.md`）。
-- **智能预测与语法高亮**：编辑器内自动补全括号，并建议变量和宏。
-- **备份与恢复**：可按类别导出或导入 `.mp.backup.json`。
-- **个性化**：自动/亮色/暗色主题，简体中文和英文界面，支持单个提示词快捷键和全局快捷键。
+- **提示词库**：新建、编辑、置顶、拖拽排序，支持搜索和悬停预览。
+- **标签与排序**：彩色标签、筛选，按名称、时间、使用次数排序。
+- **动态提示词**：支持变量、选项、文件槽位和日期时间。
+- **行内调用**：输入框中键入 `#` 加关键词，快速插入提示词。
+- **自动发送与附件**：插入后可自动发送，支持自动附加文件。
+- **AI 优化提示词**：接入自己的 OpenAI 兼容接口，多套配置，对比后再应用。
+- **外部提示词**：订阅 JSON 元数据，支持版本检查和更新。
+- **Gist 与备份**：在 Gist 导入导出提示词，支持备份恢复。
 
 ## 使用方法
 
@@ -55,7 +57,7 @@ Prompt Manager 是一款免费开源的用户脚本，为 AI 聊天页面增加�
 | 操作 | 结果 |
 | --- | --- |
 | 点击按钮 | 打开提示词列表 |
-| 悬停按钮 | 展开 **优化**（AI）和 **粘贴** 快捷按钮 |
+| 悬停按钮 | 展开 **优化提示词**（AI）和 **粘贴** 快捷按钮 |
 | 点击某条提示词 | 插入到输入框（动态提示词会先弹出填写窗口） |
 | 悬停某条提示词 | 显示预览，以及编辑 / 复制 / 删除 / 移动 / 置顶操作 |
 
@@ -119,14 +121,14 @@ Prompt Manager 是一款免费开源的用户脚本，为 AI 聊天页面增加�
 - 脚本没有任何遥测，不会收集或上传你的数据。
 - 仅在两种情况下会发起网络请求：
   - **AI 优化**：把提示词发送到你配置的 Base URL。
-  - **外部提示词 / Gist**：从 `raw.githubusercontent.com`、`gist.githubusercontent.com`、`cdn.jsdelivr.net` 或 `gitlab.com` 获取元数据、提示词和更新日志。
+  - **外部提示词 / Gist**：从 `raw.githubusercontent.com`、`gist.githubusercontent.com`、`cdn.jsdelivr.net` 或 `gitlab.com` 获取提示词。
 - 脚本声明了 `@connect *`，以便支持自定义 API 地址。请只配置你信任的接口。
-- 导入备份前请先备份当前数据；导入会覆盖所选类别。
+
 
 ## 关于
 
 - 脚本通过页面结构定位各网站的输入框和发送按钮，网站改版可能导致插入或按钮位置失效，请保持脚本更新。
-- 如果某个平台失效，请提交 [GitHub Issue](https://github.com/teressalodas/Prompt-Manager/issues)，并注明平台和浏览器。
+- 如果某个平台失效，请提交 [GitHub Issue](https://github.com/teressalodas/Prompt-Manager/issues)，并注明平台。
 - 欢迎提交 Pull Request。如果觉得有用，欢迎给仓库点 Star。
 - 请遵守各平台的服务条款。
 
