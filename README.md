@@ -3,29 +3,25 @@
   <h1>Prompt Manager</h1>
 </div>
 
-<div align="center">
-  <strong>简体中文</strong> | <a href="README.en.md">English</a>
-</div>
+<p align="center">简体中文 | <a href="./README.en.md">English</a></p>
 
-Prompt Manager 是一款免费开源的用户脚本，为 AI 聊天页面增加提示词库。
-
-可在 ChatGPT、Claude、Gemini、DeepSeek、Kimi、豆包、千问等主流 AI 平台上保存、整理和复用提示词。支持动态提示词（变量、选项列表、文件槽位）、AI 优化提示词、带更新检查的提示词订阅，以及 GitHub Gist 分享。
+Prompt Manager 是一款免费开源的用户脚本，为 AI 聊天页面增加通用提示词管理器。支持多个主流 AI 平台，支持动态提示词、AI 优化提示词、外部提示词订阅更新、Gist 导入导出、备份恢复。
 
 ## 支持的平台
 
 | 平台 | 网站 |
 | --- | --- |
+| DeepSeek | chat.deepseek.com |
+| 豆包 | doubao.com |
+| 千问 | qianwen.com |
+| 腾讯元宝 | yuanbao.tencent.com |
+| Kimi | kimi.com |
 | ChatGPT | chatgpt.com |
 | Claude | claude.ai |
 | Google Gemini | gemini.google.com |
 | Grok | grok.com |
-| DeepSeek | chat.deepseek.com |
-| Kimi | kimi.com |
-| 豆包 | doubao.com |
-| 千问 | qianwen.com |
 | 通义千问（Qwen） | chat.qwen.ai |
 | Z.ai（GLM） | chat.z.ai |
-| 腾讯元宝 | yuanbao.tencent.com |
 | Arena AI | arena.ai |
 
 ## 安装
